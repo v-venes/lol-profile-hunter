@@ -9,11 +9,12 @@ import java.net.URL;
 import javax.swing.JOptionPane;
 import config.*;
 public class RiotAPI {
-	private String key = Config.LOL_API_KEY;
-	
+	private String key = "";
+	private Config conf = new Config();
 	// o endpoint é oq vem depois do https://server.api.riotgames.com/
 	public String request(String server, String endpoint, String param) {
-		String uri = "https://" + server + ".api.riotgames.com/" + endpoint + param + "?api_key=" + key;
+		key = conf.getKey();
+		String uri = "https://" + server + ".api.riotgames.com/" + endpoint + param + "api_key=" + key;
 		String resp = "";
 		try {
 			URL retornoAPI = new URL(uri);

@@ -13,11 +13,21 @@ public class Invocador {
     private long idIconeInv;
     
     private List<Maestria> maestrias = new ArrayList<>();
-
+    
+    private List<Partida> partidas = new ArrayList<>();
+    
+    public List<Partida> getPartidas(){
+    	return partidas;
+    }
+    
     public List<Maestria> getMaestrias() {
         return maestrias;
     }
 
+    public void addPartidas(Partida partida) {
+    	this.partidas.add(partida);
+    }
+    
     public void addMaestrias(Maestria maestria) {
         this.maestrias.add(maestria);
     }
